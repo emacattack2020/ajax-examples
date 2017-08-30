@@ -5,8 +5,10 @@ import './App.css';
 import Name from './components/name/Name';
 import TextArea from './components/textarea/TextArea';
 
+import Users from './components/users/Users';
+
 class App extends Component {
-  
+
   render() {
     return (
       <div className="App">
@@ -20,6 +22,9 @@ class App extends Component {
         <div>
           <Name />
           <TextArea />
+        </div>
+        <div>
+          <Users/>
         </div>
       </div>
     );
