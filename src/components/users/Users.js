@@ -2,15 +2,18 @@ import React from "react";
 import { connect } from "react-redux";
 import { getUsers } from "./actions";
 
-class Users extends React.Component {
+export default class Users extends React.Component {
 
+    getPosts(userId) {
+        console.log('get posts', userId);
+    }
     displayUsers() {
-        if(this.props.names.payload) {
+        if(this.props.names && this.props.names.payload) {
             console.log("names.payload:" ,this.props.names.payload)
             return this.props.names.payload.map((user) => {
                 return (
                     <li key={user.id}>
-                        {user.id} - { user.name }
+                        {user.id} - { user.name } - <a onClick={() => this.props.posts(user.id)} href="javascript:void(0);">view posts</a>
                     </li>
                 )
             });
@@ -19,7 +22,7 @@ class Users extends React.Component {
     render() {
         return (
             <div>
-                <button onClick={() => this.props.getUsers() }> Get Users </button>
+                
                 <ul>
                     {this.displayUsers()}
                 </ul>
@@ -28,18 +31,3 @@ class Users extends React.Component {
         );
     }
 }
-
-const mapStateToProps = (state) => {
-    return {
-        names: state.users
-    };
-}
-const mapDispatchToProps = (dispatch) => {
-    return {
-        getUsers: (name) => {
-            dispatch(getUsers());
-        }
-    };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Users);
