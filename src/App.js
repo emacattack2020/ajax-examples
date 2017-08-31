@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import logo from './logo.svg';
 import './App.css';
-import { getUsers } from './actions/users';
-import { getPosts } from './actions/posts';
+
+import { getUsers, getPosts, setName } from './actions';
 
 import Name from './components/Name';
 import TextArea from './components/TextArea';
@@ -12,10 +12,6 @@ import Users from './components/Users';
 import Posts from './components/Posts';
 
 class App extends Component {
-
-    getPosts(userId2) {
-        console.log("POSTS", userId2)
-    }
     render() {
         return (
             <div className="App">
@@ -27,7 +23,7 @@ class App extends Component {
                     To get started, edit <code>src/App.js</code> and save to reload.
                 </p>
                 <div>
-                    <Name />
+                    <Name changeName={ this.props.setName }/>
                     <TextArea />
                 </div>
                 <div>
@@ -41,12 +37,16 @@ class App extends Component {
 }
 const mapStateToProps = (state) => {
     return {
+        name: state.name,
         names: state.users,
         posts: state.posts
     };
 }
 const mapDispatchToProps = (dispatch) => {
     return {
+        setName: (name) => {
+            dispatch(setName(name));
+        },
         getUsers: () => {
             dispatch(getUsers());
         },
