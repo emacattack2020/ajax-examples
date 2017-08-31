@@ -4,12 +4,7 @@ import logo from './logo.svg';
 import './App.css';
 
 import { getUsers, getPosts, setName } from './actions';
-
-import Name from './components/Name';
-import TextArea from './components/TextArea';
-
-import Users from './components/Users';
-import Posts from './components/Posts';
+import { Name, TextArea, Users, Posts } from './components';
 
 class App extends Component {
     render() {
@@ -24,7 +19,7 @@ class App extends Component {
                 </p>
                 <div>
                     <Name changeName={ this.props.setName }/>
-                    <TextArea />
+                    <TextArea name={ this.props.name.name }/>
                 </div>
                 <div>
                     <button onClick={() => this.props.getUsers() }> Get Users </button>

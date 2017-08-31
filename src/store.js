@@ -1,9 +1,8 @@
 import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 import { createLogger } from "redux-logger";
 import thunk from "redux-thunk";
-import name from './reducers/name';
-import users from './reducers/users';
-import posts from './reducers/posts';
+
+import { name, users, posts } from './reducers'
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
