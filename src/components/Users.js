@@ -1,6 +1,5 @@
 import React from "react";
 import { connect } from "react-redux";
-import { getUsers } from "./actions";
 
 export default class Users extends React.Component {
 

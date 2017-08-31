@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import logo from './logo.svg';
 import './App.css';
-import { getUsers } from './components/users/actions';
-import { getPosts } from './components/posts/actions';
+import { getUsers } from './actions/users';
+import { getPosts } from './actions/posts';
 
-import Name from './components/name/Name';
-import TextArea from './components/textarea/TextArea';
+import Name from './components/Name';
+import TextArea from './components/TextArea';
 
-import Users from './components/users/Users';
-import Posts from './components/posts/Posts';
+import Users from './components/Users';
+import Posts from './components/Posts';
 
 class App extends Component {
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from'react-redux';
-import { setName } from "./actions";
+import { setName } from "../actions/name";
 
 class Name extends React.Component {
     constructor(props) {
