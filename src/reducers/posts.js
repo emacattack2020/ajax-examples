@@ -1,4 +1,7 @@
-const posts = (state = {}, action) => {
+const posts = (state = {
+    isFetching: false,
+    payload: []
+}, action) => {
     switch (action.type) {
         case "REQUEST_POSTS":
             state = {

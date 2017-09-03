@@ -7,6 +7,20 @@ import { getUsers, getPosts, setName } from './actions';
 import { Name, TextArea, Users, Posts } from './components';
 
 class App extends Component {
+    shouldComponentUpdate(nextProps, nextState) {
+        console.log("Should Component update", nextProps);
+        console.log("nextStateCCCCCCCC", nextState);
+        // if(nextState.status === 1) {
+        //     return false;
+        // }
+        if(nextProps.posts.isFetching ) {
+            return false
+        } else if(nextProps.names.isFetching) {
+            return false;
+        } else {
+            return true;
+        }
+    }
     render() {
         return (
             <div className="App">

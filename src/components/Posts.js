@@ -18,14 +18,14 @@ export default class Posts extends React.Component {
     renderPosts() {
         const { posts } = this.props;
         if(!isEmpty(posts)) { 
-             return posts.isFetching ? this.displayLoadingSpinner() : this.displayPosts(posts)
+             return posts && posts.isFetching ? this.displayLoadingSpinner() : this.displayPosts(posts)
         } 
     }
     render() {
         return (
-            <div>
+            <ul>
                 { this.renderPosts() }
-            </div>
+            </ul>
         );
     }
 }

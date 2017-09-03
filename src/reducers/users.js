@@ -1,4 +1,7 @@
-const users = (state = {}, action) => {
+const users = (state = {
+    isFetching: false,
+    payload: []
+}, action) => {
     switch (action.type) {
         case "REQUEST_USERS":
             state = {
