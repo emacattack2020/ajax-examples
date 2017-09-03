@@ -3,9 +3,10 @@ import isEmpty from 'lodash/isEmpty';
 
 export default class Posts extends React.Component {
     renderPosts() {
-        if(!isEmpty(this.props.posts)) {
-            
-            return this.props.posts.payload.map((post) => {
+        const { posts } = this.props;
+        console.log("POSTSSSSSSS:", posts)
+        if(!isEmpty(posts)) { 
+            return posts.payload.map((post) => {
                 return (
                     <li key={post.id}>
                         {post.id} - {post.title}

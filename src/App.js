@@ -23,7 +23,7 @@ class App extends Component {
                 </div>
                 <div>
                     <button onClick={() => this.props.getUsers() }> Get Users </button>
-                    <Users names={ this.props.names } posts={ this.props.getPosts }/>
+                    <Users names={ this.props.names } getPosts={ this.props.getPosts }/>
                     <Posts posts={ this.props.posts }/>
                 </div>
             </div>

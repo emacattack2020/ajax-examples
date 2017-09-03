@@ -21,6 +21,9 @@ const posts = (state = {}, action) => {
                 isFetching: false
             }
             break;
+        case "CLEAR_POSTS":
+            state = {}
+            break;
     }
     return state;
 };

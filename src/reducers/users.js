@@ -4,7 +4,7 @@ const users = (state = {}, action) => {
             state = {
                 ...state,
                 payload: action.payload, 
-                isFetching: true
+                isFetching: true,
             }
             break;
         case "RECIEVE_USERS":
