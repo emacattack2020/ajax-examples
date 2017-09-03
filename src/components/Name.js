@@ -1,6 +1,5 @@
 import React from "react";
-import { connect } from'react-redux';
-import { setName } from "../actions/name";
+import PropTypes from 'prop-types';
 
 export default class Name extends React.Component {
     constructor(props) {
@@ -22,3 +21,6 @@ export default class Name extends React.Component {
         )
     }
 }
+Name.propTypes = {
+  changeName: PropTypes.func
+};

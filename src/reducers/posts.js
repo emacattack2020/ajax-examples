@@ -4,31 +4,28 @@ const posts = (state = {
 }, action) => {
     switch (action.type) {
         case "REQUEST_POSTS":
-            state = {
+            return {
                 ...state,
                 payload: action.payload, 
                 isFetching: true
             }
-            break;
         case "RECEIVE_POSTS":
-            state = {
+            return {
                 ...state,
                 payload: action.payload,
                 isFetching: false
             }
-            break;
         case "RECEIVE_POSTS_REJECTED":
-            state = {
+            return {
                 ...state,
                 payload: action.payload,
                 isFetching: false
             }
-            break;
         case "CLEAR_POSTS":
-            state = {}
-            break;
+            return {}
+        default:
+            return state;
     }
-    return state;
 };
 
 export default posts;

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import logo from './logo.svg';
 import './App.css';
@@ -63,5 +64,13 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(getPosts(userId));
         }
     };
+};
+App.propTypes = {
+  isFetching: PropTypes.bool,
+  setName: PropTypes.func,
+  getUsers: PropTypes.func,
+  name: PropTypes.object,
+  posts: PropTypes.object,
+  names: PropTypes.object
 };
 export default connect(mapStateToProps, mapDispatchToProps)(App);

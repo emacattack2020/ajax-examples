@@ -1,12 +1,15 @@
 import React from "react";
-import { connect } from "react-redux";
+import PropTypes from 'prop-types';
 //import { setName } from "./userActions";
 
 export default class TextArea extends React.Component {
     render() {
         console.log('name', this.props.name)
         return (
-            <textarea value={this.props.name} />
+            <textarea readOnly value={this.props.name} />
         );
     }
 }
+TextArea.propTypes = {
+  names: PropTypes.string
+};

@@ -1,5 +1,5 @@
 import React from "react";
-import { connect } from "react-redux";
+import PropTypes from 'prop-types';
 
 export default class Users extends React.Component {
     renderUsers() {
@@ -8,7 +8,7 @@ export default class Users extends React.Component {
             return names.payload.map((user) => {
                 return (
                     <li key={user.id}>
-                        {user.id} - { user.name } - <a onClick={() => getPosts(user.id)} href="javascript:void(0);">view posts</a>
+                        {user.id} - { user.name } - <a onClick={() => getPosts(user.id)} href="#/">view posts</a>
                     </li>
                 )
             });
@@ -24,3 +24,7 @@ export default class Users extends React.Component {
         );
     }
 }
+Users.propTypes = {
+  getPosts: PropTypes.func,
+  names: PropTypes.object
+};

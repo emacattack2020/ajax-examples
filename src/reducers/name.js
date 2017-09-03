@@ -3,14 +3,13 @@ const name = (state = {
 }, action) => {
     switch (action.type) {
         case "SET_NAME":
-            state = {
+            return {
                 ...state,
                 name: action.name,
                 payload: action.payload,
             }
-            break;
+        default:
+            return state;
     }
-    return state;
 };
-
 export default name;

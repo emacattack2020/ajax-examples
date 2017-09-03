@@ -4,28 +4,26 @@ const users = (state = {
 }, action) => {
     switch (action.type) {
         case "REQUEST_USERS":
-            state = {
+            return {
                 ...state,
                 payload: action.payload, 
                 isFetching: true,
             }
-            break;
         case "RECIEVE_USERS":
-            state = {
+            return {
                 ...state,
                 payload: action.payload,
                 isFetching: false
             }
-            break;
         case "RECIEVE_USERS_REJECTED":
-            state = {
+            return {
                 ...state,
                 payload: action.payload,
                 isFetching: false
             }
-            break;
+        default:
+          return state;
     }
-    return state;
 };
 
 export default users;
